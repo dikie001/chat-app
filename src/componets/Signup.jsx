@@ -19,7 +19,7 @@ const SignUp = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     const loadingToast = toast.loading("just a moment...");
-
+    username = {username}; 
     try {
       setLoadingStatus("signupWithEmail");
       await createUserWithEmailAndPassword(auth, email, password);

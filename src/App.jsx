@@ -10,21 +10,21 @@ import { useState } from "react";
 const cookies = new Cookies();
 
 const App = () => {
-  const [room, setRoom] = useState("");
-  const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
-  if (!isAuth) {
-    return (
-      <div>
-        <Login />
-      </div>
-    );
-  }else if(isAuth){
-    return(
-    <div>
-      <Hero/>
-    </div>
-    )
-  }
+  // const [room, setRoom] = useState("");
+  // const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
+  // if (!isAuth) {
+  //   return (
+  //     <div>
+  //       <Login />
+  //     </div>
+  //   );
+  // }else if(isAuth){
+  //   return(
+  //   <div>
+  //     <Hero/>
+  //   </div>
+  //   )
+  // }
   return (
     <Router>
       

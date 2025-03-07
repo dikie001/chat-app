@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-const Hero = () => {
+const Hero = ({username}) => {
   const navigate = useNavigate();
 
   return (
     <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 text-gray-900">
+      alert(`hello ${username}`)
       <h1 className="text-6xl font-extrabold tracking-wide text-purple-700">Welcome to Vybe</h1>
       <p className="mt-4 text-lg text-gray-700 max-w-md text-center">
         Connect, share, and vibe with your community. Join now and be part of the experience!
