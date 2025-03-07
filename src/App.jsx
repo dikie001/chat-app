@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./componets/Login";
-import Signup from "./componets/Signup";
+import SignUp from "./componets/Signup";
 import Hero from "./componets/Hero";
 import { Toaster } from "react-hot-toast";
 import Cookies from "universal-cookie";
@@ -18,16 +18,22 @@ const App = () => {
         <Login />
       </div>
     );
+  }else if(isAuth){
+    return(
+    <div>
+      <Hero/>
+    </div>
+    )
   }
   return (
     <Router>
+      
       <Toaster position="top-right" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/hero" element={<Hero />} />
       </Routes>
-     
     </Router>
   );
 };

@@ -8,7 +8,7 @@ import Cookies from "universal-cookie";
 
 import { toast } from "react-hot-toast";
 
-const Signup = () => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -21,7 +21,7 @@ const Signup = () => {
     const loadingToast = toast.loading("just a moment...");
 
     try {
-      setLoadingStatus('signupWithEmail')
+      setLoadingStatus("signupWithEmail");
       await createUserWithEmailAndPassword(auth, email, password);
       const succesToast = toast.success("Sign up success!", {
         id: loadingToast,
@@ -34,11 +34,11 @@ const Signup = () => {
     } catch (e) {
       console.log(e);
     }
-    setLoadingStatus(null)
+    setLoadingStatus(null);
   };
   const googleSignUp = async () => {
     const loadingToast = toast.loading("signing in...");
-    setLoadingStatus("googleSignup")
+    setLoadingStatus("googleSignup");
     try {
       const result = await signInWithPopup(auth, provider);
       navigate("/hero");
@@ -46,7 +46,7 @@ const Signup = () => {
     } catch (e) {
       console.log(e);
     }
-    setLoadingStatus(null)
+    setLoadingStatus(null);
     toast.success("Signed in successfully!", { id: loadingToast });
   };
 
@@ -96,7 +96,7 @@ const Signup = () => {
             disabled={loadingStatus === "signupWithEmail"}
             className="w-full py-2 bg-purple-600 hover:shadow-emerald-400 shadow-md rounded-md font-bold transition"
           >
-            {loadingStatus=== "signupWithEmail" ? "Signing up..." : "Sign Up"}
+            {loadingStatus === "signupWithEmail" ? "Signing up..." : "Sign Up"}
           </button>
         </div>
         <p className="text-center font-semibold text-sm mt-4">
@@ -118,9 +118,9 @@ const Signup = () => {
             className="w-full flex justify-center gap-4 outline-0 px-4 py-2 rounded-lg text-white border-2 shadow-sm hover:shadow-md hover:shadow-emerald-400 font-semibold hover:border-cyan-300 border-purple-600"
           >
             <SiGoogle size={20} className="text-purple-300" />
-           {
-            loadingStatus === "googleSignup"? "Logging in...": "Log in with google"
-           }
+            {loadingStatus === "googleSignup"
+              ? "Logging in..."
+              : "Log in with google"}
           </button>
         </div>
       </div>
@@ -128,4 +128,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
