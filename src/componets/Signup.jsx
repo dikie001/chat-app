@@ -8,7 +8,7 @@ import Cookies from "universal-cookie";
 
 import { toast } from "react-hot-toast";
 
-const Login = () => {
+const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -128,4 +128,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
